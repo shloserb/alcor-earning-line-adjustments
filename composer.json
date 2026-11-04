@@ -1,0 +1,33 @@
+{
+    "name": "local/earning-line-adjustments",
+    "description": "Event-sourced domain model for manual adjustments to a payroll earning line (Alcor coding test)",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": "^8.4"
+    },
+    "autoload": {
+        "psr-4": { "Payroll\\": "src/" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Payroll\\Tests\\": "tests/" }
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": { "php": "8.4.1" }
+    },
+    "scripts": {
+        "test": "phpunit",
+        "analyse": "phpstan analyse --memory-limit=512M",
+        "demo": "php bin/demo.php",
+        "check": [
+            "@composer validate --strict",
+            "@analyse",
+            "@test"
+        ]
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2",
+        "phpunit/phpunit": "^13"
+    }
+}
